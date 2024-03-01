@@ -1,0 +1,100 @@
+[20:24] KANCHAN, RAHUL MANOJ (PGT)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Commentary</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    #commentary {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    p {
+        margin: 5px 0;
+        color: #333;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    p:nth-child(odd) {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Live Commentary</h1>
+<div id="commentary"></div>
+</div>
+    <script>
+        var commentaryDiv = document.getElementById("commentary");
+        var commentIndex = 0;
+        var commentaryList = [
+            
+            "During the 2019 campaign, Hyderabad is abuzz with cricket excitement as Mumbai Indians prepares to take on Chennai Super Kings. Today, 12/5/2019, Mumbai Indians claims the toss victory and selects to bat first.",
+ 
+"Start of first over..",
+"Batsman on Strike:",
+"Q de Kock scored 1,478 runs so far in IPL with an outstanding 32.13 average, striking at jaw-dropping 133.27.",
+"As the anticipation mounts and the crowd roars with excitement, all eyes are on Q de Kock, will he set the tone for another thrilling match?",
+
+"Batsman at non-strike:",
+"RG Sharma scored 4,902 runs so far in IPL with an incredible 30.45 average, striking at staggering 131.00.",
+"As the bowler prepares to start the proceedings, RG Sharma awaits eagerly at the non-striker's end, ready to seize any opportunity coming his way.",
+
+"Bowler:",
+"DL Chahar took staggering 22 wickets in 64.3 overs so far this season. His exceptional performance, marked by numerous wickets, has been a highlight of the season. Can he maintain his dominance?",
+"DL Chahar this season:",
+"Wickets : 22",
+"Average : 21.9",
+"Economy : 7.47",
+"Strike rate : 17.59 ",
+"Best figures : 3/20",
+"With the excitement in the air and both teams primed for action, DL Chahar stands on the brink of another significant night match, ready to make his mark on the proceedings.",
+
+
+"1.1 DL Chahar to Q de Kock, one run, adding a single to the score.",
+"1.2 DL Chahar to RG Sharma, six runs, over the ropes!!!1 Six runs!!!!",
+"1.3 DL Chahar to Q de Kock, zero runs, score remains unchanged.",
+"1.4 DL Chahar to Q de Kock, four runs, perfect timing!!!! Four!!!!",
+"1.5 DL Chahar to Q de Kock, zero runs, resulting in a doughnut.",
+"1.6 DL Chahar to Q de Kock, zero runs, oops! Just a dot."
+        ];
+        function displayCommentary() {
+            if (commentIndex < commentaryList.length) {
+                var colorClass = commentIndex % 2 === 0 ? "even" : "odd";
+                commentaryDiv.innerHTML += "<p class='" + colorClass + "'>" + commentaryList[commentIndex] + "</p>";
+                commentIndex++;
+                commentaryDiv.scrollTop = commentaryDiv.scrollHeight; // Scroll to bottom
+            } else {
+                clearInterval(commentInterval);
+            }
+        }
+        var commentInterval = setInterval(displayCommentary, 2000); // Update every 2 seconds
+</script>
+</body>
+</html>
